@@ -1,7 +1,22 @@
 HELP.md
+# Ignore everything inside target/
+target/*
+
+# But keep JAR files (you want to push only the jar)
+!target/*.jar
+
+# Keep the Maven wrapper files
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+
+# Always ignore these subdirectories in target/
+target/classes/
+target/generated-sources/
+target/generated-test-sources/
+target/maven-archiver/
+target/maven-status/
+target/surefire-reports/
+target/test-classes/
+
 
 ### STS ###
 .apt_generated
