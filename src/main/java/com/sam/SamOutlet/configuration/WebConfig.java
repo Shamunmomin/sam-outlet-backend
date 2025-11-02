@@ -23,9 +23,11 @@ public class WebConfig implements WebMvcConfigurer{
 	        @Override
 	        public void addCorsMappings(CorsRegistry registry) {
 	            registry.addMapping("/**")
-	                    .allowedOrigins("https://shamunmomin.github.io/sam-outlet","https://shamunmomin.github.io/sam-outlet/")
+	                    .allowedOrigins("https://shamunmomin.github.io","https://shamunmomin.github.io/sam-outlet")
 	                    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-	                    .allowedHeaders("*");
+	                    .allowedHeaders("*")
+				        .exposedHeaders("authorization")
+						.allowCredentials(true);
 	        }
 	    };
 	}
