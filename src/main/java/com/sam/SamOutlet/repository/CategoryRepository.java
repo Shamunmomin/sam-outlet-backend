@@ -5,10 +5,13 @@ import org.springframework.stereotype.Repository;
 
 import com.sam.SamOutlet.entities.Category;
 
+import java.util.List;
+
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long>{
 	
 	boolean existsByNameIgnoreCase(String name);
     
     public Category findById(long id);
+
 }

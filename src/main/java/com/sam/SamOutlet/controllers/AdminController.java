@@ -80,7 +80,7 @@ public class AdminController {
 	    	String resetToken =UUID.randomUUID().toString();
 	    	userService.updateUserResetToken(email,resetToken);
 	    	
-	    	String url=  "http://localhost:4200/reset-password?token="+resetToken;
+	    	String url=  "https://shamunmomin.github.io/sam-outlet/reset-password?token="+resetToken;
 	    	
 	      Boolean sendMail =commonUtil.sendMail(url,email);
 	      

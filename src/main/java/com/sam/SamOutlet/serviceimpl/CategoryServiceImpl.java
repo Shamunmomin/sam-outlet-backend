@@ -39,12 +39,16 @@ public class CategoryServiceImpl implements CategoryService{
 		// Create upload directory if it doesn't exist
         File directory = new File(uploadDir);
         if (!directory.exists()) {
-            directory.mkdir();
+//            directory.mkdir();
+			directory.mkdirs();
         }
 
         // Create unique file name and save
         String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
         Path filePath = Paths.get(uploadDir, fileName);
+
+		System.out.println("✅ Saving upload to: " + filePath.toAbsolutePath());
+
         try {
 			Files.write(filePath, file.getBytes());
 		} catch (java.io.IOException e) {

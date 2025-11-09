@@ -37,9 +37,9 @@ public class WebSecurityConfiguration  {
 	        return http
 	                .csrf(csrf -> csrf.disable())
 	                .authorizeHttpRequests(auth -> auth
-	                        .requestMatchers("/authenticate", "/signup","/user/**","/uploads/**").permitAll()     // Public access
-	                        .requestMatchers("/admin/**").permitAll()             // Admin-only access
-	                        .anyRequest().authenticated()                              // All other requests need authentication
+	                        .requestMatchers("/authenticate", "/signup","/user/**","/uploads/**","/admin/**").permitAll()     // Public access
+//	                        .requestMatchers().permitAll()             // Admin-only access
+	                        .anyRequest().permitAll()                             // All other requests need authentication
 	                )
 	                .httpBasic(Customizer.withDefaults())
 	                .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)

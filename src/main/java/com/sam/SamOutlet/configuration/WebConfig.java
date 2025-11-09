@@ -13,7 +13,7 @@ public class WebConfig implements WebMvcConfigurer{
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/uploads/**")
-				.addResourceLocations("file:uploads/"); // or absolute path if needed
+				.addResourceLocations("file:/opt/render/project/src/uploads/"); // or absolute path if needed
 	}
 
 	
@@ -23,7 +23,7 @@ public class WebConfig implements WebMvcConfigurer{
 	        @Override
 	        public void addCorsMappings(CorsRegistry registry) {
 	            registry.addMapping("/**")
-	                    .allowedOrigins("https://shamunmomin.github.io","https://shamunmomin.github.io/sam-outlet")
+	                    .allowedOrigins("https://shamunmomin.github.io","https://shamunmomin.github.io/sam-outlet","http://localhost:4200")
 	                    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 	                    .allowedHeaders("*")
 				        .exposedHeaders("authorization")
