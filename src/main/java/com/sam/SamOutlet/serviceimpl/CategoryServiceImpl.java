@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService{
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	private final String uploadDir = "/app/uploads";
+	private final String uploadDir = "/uploads";
 
 	
 	// SAVE CATEGORY
