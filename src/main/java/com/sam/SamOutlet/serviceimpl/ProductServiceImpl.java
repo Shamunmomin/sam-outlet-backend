@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	private ProductRepository productRepository;
 
-	private final String uploadDir = "/uploads/products";
+	private final String uploadDir = "uploads/products";
 
 	@Override
 	public String saveProduct(MultipartFile file, ProductDTO dto) {
