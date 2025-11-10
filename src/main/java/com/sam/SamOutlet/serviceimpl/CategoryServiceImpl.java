@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService{
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	private final String uploadDir = "uploads";
+	private final String uploadDir = "/app/uploads";
 
 	
 	// SAVE CATEGORY
@@ -65,7 +65,7 @@ public class CategoryServiceImpl implements CategoryService{
         cat.setName(category.getName());
         cat.setIsActive(category.getIsActive());
         cat.setType(file.getContentType());
-        cat.setFilePath(filePath.toString());
+        cat.setFilePath("uploads/"+fileName);
         
         categoryRepository.save(cat);
 

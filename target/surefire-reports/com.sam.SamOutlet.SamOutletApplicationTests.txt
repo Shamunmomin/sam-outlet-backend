@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.sam.SamOutlet.SamOutletApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.41 s -- in com.sam.SamOutlet.SamOutletApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.00 s -- in com.sam.SamOutlet.SamOutletApplicationTests
