@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	private ProductRepository productRepository;
 
-	private final String uploadDir = "uploads/products";
+	private final String uploadDir = "/app/uploads/products";
 
 	@Override
 	public String saveProduct(MultipartFile file, ProductDTO dto) {
@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService{
 		// Create upload directory if it doesn't exist
 		File directory = new File(uploadDir);
 		if (!directory.exists()) {
-			directory.mkdir();
+			directory.mkdirs();
 		}
 
 		String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
@@ -110,7 +110,7 @@ public class ProductServiceImpl implements ProductService{
 
 			// Save new file
 			String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
-			Path filePath = Paths.get("uploads/products", fileName);
+			Path filePath = Paths.get(uploadDir, fileName);
 			try {
 				Files.write(filePath, file.getBytes());
 				product.setImagePath(filePath.toString()); // Update file path in DB
